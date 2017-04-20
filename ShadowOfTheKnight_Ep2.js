@@ -55,6 +55,8 @@ function adjustExplorationZoneAndJump(bombDir)
             }
         case States.EXPLORECENTER:
             {
+                // TODO - adjust exploration zone..
+                
                 // Batman just jumped to the center of the exploration zone.
                 // Start prospecting down if not already at the bottom
                 if (batmanPos.y < (H - 1) && batmanPos.y < explorationZone.bottomRight.y)
