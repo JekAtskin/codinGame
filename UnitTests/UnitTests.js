@@ -41,7 +41,7 @@ if (!Array.prototype.indexOf)
 
 function isArray(v)
 {
-	if(v.indexOf)
+	if (v.indexOf)
 	{
 		return true;
 	}
