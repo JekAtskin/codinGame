@@ -35,7 +35,7 @@ var width = parseInt(readline()); // the number of cells on the X axis
 var height = parseInt(readline()); // the number of cells on the Y axis
 var cells = [];
 var cellWithRightTBD;
-var cellsWithBottomTBD = [];
+var cellsWithBottomTBD = {};
 for (var i = 0; i < height; i++) {
     var line = readline(); // width characters, each either 0 or .
     for(var l=0; l<line.length; l++)
@@ -51,19 +51,14 @@ for (var i = 0; i < height; i++) {
             }
 
             // is this cell on the bottom of previous one
-            for(var b = 0; b < cellsWithBottomTBD.length; b++)
+            if(cellsWithBottomTBD[l])
             {
-                if(cellsWithBottomTBD[b].x === l)
-                {
-                    cellsWithBottomTBD[b].SetBottomCell(newCell);
-                    cellsWithBottomTBD.splice(b, 1);
-                    b = cellsWithBottomTBD.length; // exit loop
-                }
+                cellsWithBottomTBD[l].SetBottomCell(newCell);
             }
 
             // newCell has pending right and bottom
             cellWithRightTBD = newCell;
-            cellsWithBottomTBD.push(newCell);
+            cellsWithBottomTBD[l] = newCell;
 
             // global grid
             cells.push(newCell);
