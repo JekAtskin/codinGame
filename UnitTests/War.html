@@ -1,0 +1,29 @@
+<html>
+	<!-- Unit tests -->
+	<script language="JavaScript" src=".\UnitTests.js"></script>
+	<script language="JavaScript" src=".\War_UnitTest.js"></script>
+
+	<!-- Code to test -->
+	<script language="JavaScript" src="..\War.js"></script>
+
+	<body>
+		<div id="resultsDiv"></div>
+		<textarea rows="25" cols="80" id="outLogs"></textarea>
+
+		<!-- Execute tests -->
+		<script language="JavaScript">
+			UnitTests.Run();
+			document.getElementById('outLogs').value = UnitTests.errorsRecap;
+			var resultDiv = document.getElementById('resultsDiv');
+			resultDiv.innerHTML = UnitTests.totalSuccess + " / " + UnitTests.totalTests;
+			if(UnitTests.totalSuccess !== UnitTests.totalTests)
+			{
+				resultDiv.style.backgroundColor = "FF3333";
+			}
+			else
+			{
+				resultDiv.style.backgroundColor = "lightGreen";
+			}
+		</script>
+	</body>
+</html>

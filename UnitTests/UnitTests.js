@@ -291,6 +291,18 @@ var UnitTests = {
 		}
 		UnitTests.outputSuccess(t);
 		return true;
+	},
+
+	assertOk: function(condition, t)
+	{
+		UnitTests.tests++;
+		if (condition)
+		{
+			UnitTests.outputSuccess(t);
+			return true;
+		}
+		UnitTests.outputError(t, condition, "true");
+		return false;
 	}
 };
 
