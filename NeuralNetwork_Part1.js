@@ -3,6 +3,39 @@
  * the standard input according to the problem statement.
  **/
 
+function Neuron(nbInputs, weights, bias)
+{
+
+}
+
+function Layer(previousLayer, nextLayer, nbNeurons)
+{
+    this.previousLayer = pLayer;
+    this.neurons = [];
+    for(var n = 0; n < nbNeurons; n++)
+    {
+        this.neurons = new Neuron();
+    }
+    this.nextLayer = nextLayer;
+}
+
+function Network(nbInput, nbOutput, nbHiddenLayers, nbNeuronsByLayer)
+{
+//    this.inputLayer = new Layer(nbInput, nbNeuronsByLayer);
+
+    // create input layer and 
+    this.layers = [];
+    for(var h = 0; h < nbHiddenLayers; h++)
+    {
+        if (h===0)
+        {
+            l = new Layer(null, nbInput, nbNeuronsByLayer);
+        }
+        var l = new Layer();
+    }
+}
+
+
 var inputs = readline().split(' ');
 var inputs = parseInt(inputs[0]);
 var outputs = parseInt(inputs[1]);

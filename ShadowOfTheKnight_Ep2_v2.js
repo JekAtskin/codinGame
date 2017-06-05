@@ -76,7 +76,7 @@ function vectDirection(end, start)
     return {
         x: end.x - start.x,
         y: end.y - start.y,
-    }
+    };
 }
 
 function adjustExplorationZone(start, end, bombDir)
